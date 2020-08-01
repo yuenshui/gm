@@ -209,7 +209,7 @@ gm(readStream)
 ## Buffers
 
 ```js
-// A buffer can be passed instead of a filepath as well
+// 可以传递`buffer`，而不是文件路径
 var buf = require('fs').readFileSync('/path/to/image.jpg');
 
 gm(buf, 'image.jpg')
@@ -220,8 +220,7 @@ gm(buf, 'image.jpg')
 });
 
 /*
-A buffer can also be returned instead of a stream
-The first argument to toBuffer is optional, it specifies the image format
+可以返回一个`buffer`而不是流，`toBuffer`的第一个参数是可选的，可以指定图片格式
 */
 gm('img.jpg')
 .resize(100, 100)
@@ -231,8 +230,8 @@ gm('img.jpg')
 })
 ```
 
-## Custom Arguments
-
+## 自定义参数
+如果`gm`不能提供所需要的可用方法，可以通过 `gm().in()` 或 `gm().out()`设置自己的方法
 If `gm` does not supply you with a method you need or does not work as you'd like, you can simply use `gm().in()` or `gm().out()` to set your own arguments.
 
 - `gm().command()` - Custom command such as `identify` or `convert`
