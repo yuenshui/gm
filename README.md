@@ -1,3 +1,4 @@
+当前的fork，只是为了翻译readme
 
 # gm [![Build Status](https://travis-ci.org/aheckmann/gm.png?branch=master)](https://travis-ci.org/aheckmann/gm)  [![NPM Version](https://img.shields.io/npm/v/gm.svg?style=flat)](https://www.npmjs.org/package/gm)
 
@@ -5,30 +6,31 @@ GraphicsMagick and ImageMagick for node
 
 ## Bug Reports
 
-When reporting bugs please include the version of graphicsmagick/imagemagick you're using (gm -version/convert -version) as well as the version of this module and copies of any images you're having problems with.
+提交bug时，请包括graphicsmagick/imagemagick的版本号，gm版本号，以及相关图片。
 
 ## Getting started
-First download and install [GraphicsMagick](http://www.graphicsmagick.org/) or [ImageMagick](http://www.imagemagick.org/). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
+
+第一次在MacOS系统下载安装[GraphicsMagick](http://www.graphicsmagick.org/) 或 [ImageMagick](http://www.imagemagick.org/)，可以非常方便的使用[Homebrew](http://mxcl.github.io/homebrew/)
 
     brew install imagemagick
     brew install graphicsmagick
 
-If you want WebP support with ImageMagick, you must add the WebP option:
+如果想在ImageMagick中使用WebP格式必须加上他的选项：
 
     brew install imagemagick --with-webp
 
-then either use npm:
+然后用npm安装gm
 
     npm install gm
 
-or clone the repo:
+或者通过git下载
 
     git clone git://github.com/aheckmann/gm.git
 
 
 ## Use ImageMagick instead of gm
 
-Subclass `gm` to enable ImageMagick
+通过`gm`使用`ImageMagick`
 
 ```js
 var fs = require('fs')
