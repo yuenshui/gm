@@ -4,11 +4,11 @@
 
 GraphicsMagick and ImageMagick for node
 
-## Bug Reports
+## 提交bug
 
 提交bug时，请包括graphicsmagick/imagemagick的版本号，gm版本号，以及相关图片。
 
-## Getting started
+## 入门
 
 第一次在MacOS系统下载安装[GraphicsMagick](http://www.graphicsmagick.org/) 或 [ImageMagick](http://www.imagemagick.org/)，可以非常方便的使用[Homebrew](http://mxcl.github.io/homebrew/)
 
@@ -43,13 +43,13 @@ gm('/path/to/my/img.jpg')
 ```
 
 
-## Basic Usage
+## 基本用法
 
 ```js
 var fs = require('fs')
   , gm = require('gm');
 
-// resize and remove EXIF profile data
+// 调整大小并删除EXIF配置文件数据
 gm('/path/to/my/img.jpg')
 .resize(240, 240)
 .noProfile()
@@ -57,43 +57,43 @@ gm('/path/to/my/img.jpg')
   if (!err) console.log('done');
 });
 
-// some files would not be resized appropriately
+// 有些文件无法正确调整大小
 // http://stackoverflow.com/questions/5870466/imagemagick-incorrect-dimensions
-// you have two options:
-// use the '!' flag to ignore aspect ratio
+// 有两个选择
+// 要么使用 '!' 标记忽略宽高比例
 gm('/path/to/my/img.jpg')
 .resize(240, 240, '!')
 .write('/path/to/resize.png', function (err) {
   if (!err) console.log('done');
 });
 
-// use the .resizeExact with only width and/or height arguments
+// 要么仅适用宽或高参数在`.resizeExact`中
 gm('/path/to/my/img.jpg')
 .resizeExact(240, 240)
 .write('/path/to/resize.png', function (err) {
   if (!err) console.log('done');
 });
 
-// obtain the size of an image
+// 获取图像大小
 gm('/path/to/my/img.jpg')
 .size(function (err, size) {
   if (!err)
     console.log(size.width > size.height ? 'wider' : 'taller than you');
 });
 
-// output all available image properties
+// 输出所有可用属性
 gm('/path/to/img.png')
 .identify(function (err, data) {
   if (!err) console.log(data)
 });
 
-// pull out the first frame of an animated gif and save as png
+// 抽取gif动画第一帧，另存为png格式
 gm('/path/to/animated.gif[0]')
 .write('/path/to/firstframe.png', function (err) {
   if (err) console.log('aaw, shucks');
 });
 
-// auto-orient an image
+// 自动调整图片方向
 gm('/path/to/img.jpg')
 .autoOrient()
 .write('/path/to/oriented.jpg', function (err) {
@@ -112,7 +112,7 @@ gm('/path/to/my/img.jpg')
   if (!err) console.log('crazytown has arrived');
 })
 
-// annotate an image
+// 图片上写字
 gm('/path/to/my/img.jpg')
 .stroke("#ffffff")
 .drawCircle(10, 10, 20, 10)
@@ -122,7 +122,7 @@ gm('/path/to/my/img.jpg')
   if (!err) console.log('done');
 });
 
-// creating an image
+// 创建图像
 gm(200, 400, "#ddff99f3")
 .drawText(10, 50, "from scratch")
 .write("/path/to/brandNewImg.jpg", function (err) {
@@ -141,7 +141,7 @@ gm(readStream, 'img.jpg')
 });
 
 
-// passing a downloadable image by url
+// 通过url下载图像
 
 var request = require('request');
 var url = "www.abc.com/pic.jpg"
@@ -152,7 +152,7 @@ gm(request(url))
 });
 
 
-// can also stream output to a ReadableStream
+// 将输出流式传递给`ReadableStream`
 // (can be piped to a local file or remote server)
 gm('/path/to/my/img.jpg')
 .resize('200', '200')
@@ -161,29 +161,28 @@ gm('/path/to/my/img.jpg')
   stdout.pipe(writeStream);
 });
 
-// without a callback, .stream() returns a stream
-// this is just a convenience wrapper for above.
+// `.stream()`方法没有回调，直接返回流
+// 这只是上面的一个简单封装
 var writeStream = fs.createWriteStream('/path/to/my/resized.jpg');
 gm('/path/to/my/img.jpg')
 .resize('200', '200')
 .stream()
 .pipe(writeStream);
 
-// pass a format or filename to stream() and
-// gm will provide image data in that format
+// 图片格式或文件名传递给`stream()`和`gm`，将以该格式提供数据
 gm('/path/to/my/img.jpg')
 .stream('png', function (err, stdout, stderr) {
   var writeStream = fs.createWriteStream('/path/to/my/reformatted.png');
   stdout.pipe(writeStream);
 });
 
-// or without the callback
+// 或者这样不使用回调
 var writeStream = fs.createWriteStream('/path/to/my/reformatted.png');
 gm('/path/to/my/img.jpg')
 .stream('png')
 .pipe(writeStream);
 
-// combine the two for true streaming image processing
+// 结合起来就可以处理流式图像数据
 var readStream = fs.createReadStream('/path/to/my/img.jpg');
 gm(readStream)
 .resize('200', '200')
@@ -192,11 +191,10 @@ gm(readStream)
   stdout.pipe(writeStream);
 });
 
-// GOTCHA:
-// when working with input streams and any 'identify'
-// operation (size, format, etc), you must pass "{bufferStream: true}" if
-// you also need to convert (write() or stream()) the image afterwards
-// NOTE: this buffers the readStream in memory!
+// 注意:
+// 使用任意'identify'标识的输出流时操作大小或格式，必须设置`{bufferStream: true}`
+// 然后通过`write()`或`stream()`进行转换。
+// 提示：readStream将会缓存在内存中
 var readStream = fs.createReadStream('/path/to/my/img.jpg');
 gm(readStream)
 .size({bufferStream: true}, function(err, size) {
