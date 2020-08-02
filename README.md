@@ -323,57 +323,57 @@ The links below refer to an older version of gm but everything should still work
 ## Methods
 
   - getters
-    - [size](http://aheckmann.github.com/gm/docs.html#getters) - returns the size (WxH) of the image
-    - [orientation](http://aheckmann.github.com/gm/docs.html#getters) - returns the EXIF orientation of the image
-    - [format](http://aheckmann.github.com/gm/docs.html#getters) - returns the image format (gif, jpeg, png, etc)
-    - [depth](http://aheckmann.github.com/gm/docs.html#getters) - returns the image color depth
-    - [color](http://aheckmann.github.com/gm/docs.html#getters) - returns the number of colors
-    - [res](http://aheckmann.github.com/gm/docs.html#getters)   - returns the image resolution
-    - [filesize](http://aheckmann.github.com/gm/docs.html#getters) - returns image filesize
-    - [identify](http://aheckmann.github.com/gm/docs.html#getters) - returns all image data available. Takes an optional format string.
+    - [size](http://aheckmann.github.com/gm/docs.html#getters) - 返回图像的尺寸（WxH）
+    - [orientation](http://aheckmann.github.com/gm/docs.html#getters) - 返回图像的EXIF方向
+    - [format](http://aheckmann.github.com/gm/docs.html#getters) - 返回图像格式 (gif, jpeg, png, etc)
+    - [depth](http://aheckmann.github.com/gm/docs.html#getters) - 返回图像颜色深度
+    - [color](http://aheckmann.github.com/gm/docs.html#getters) - 返回颜色数
+    - [res](http://aheckmann.github.com/gm/docs.html#getters)   - 返回图像分辨率
+    - [filesize](http://aheckmann.github.com/gm/docs.html#getters) - 返回图像文件大小
+    - [identify](http://aheckmann.github.com/gm/docs.html#getters) - 返回所有可用的图像数据。采用可选的格式字符串。
 
-  - manipulation
-    - [adjoin](http://aheckmann.github.com/gm/docs.html#adjoin)
-    - [affine](http://aheckmann.github.com/gm/docs.html#affine)
-    - [antialias](http://aheckmann.github.com/gm/docs.html#antialias)
-    - [append](http://aheckmann.github.com/gm/docs.html#append)
-    - [authenticate](http://aheckmann.github.com/gm/docs.html#authenticate)
-    - [autoOrient](http://aheckmann.github.com/gm/docs.html#autoOrient)
-    - [average](http://aheckmann.github.com/gm/docs.html#average)
-    - [backdrop](http://aheckmann.github.com/gm/docs.html#backdrop)
-    - [bitdepth](http://aheckmann.github.com/gm/docs.html#bitdepth)
-    - [blackThreshold](http://aheckmann.github.com/gm/docs.html#blackThreshold)
-    - [bluePrimary](http://aheckmann.github.com/gm/docs.html#bluePrimary)
-    - [blur](http://aheckmann.github.com/gm/docs.html#blur)
-    - [border](http://aheckmann.github.com/gm/docs.html#border)
-    - [borderColor](http://aheckmann.github.com/gm/docs.html#borderColor)
-    - [box](http://aheckmann.github.com/gm/docs.html#box)
-    - [channel](http://aheckmann.github.com/gm/docs.html#channel)
-    - [charcoal](http://aheckmann.github.com/gm/docs.html#charcoal)
-    - [chop](http://aheckmann.github.com/gm/docs.html#chop)
-    - [clip](http://aheckmann.github.com/gm/docs.html#clip)
-    - [coalesce](http://aheckmann.github.com/gm/docs.html#coalesce)
-    - [colors](http://aheckmann.github.com/gm/docs.html#colors)
-    - [colorize](http://aheckmann.github.com/gm/docs.html#colorize)
-    - [colorMap](http://aheckmann.github.com/gm/docs.html#colorMap)
-    - [colorspace](http://aheckmann.github.com/gm/docs.html#colorspace)
-    - [comment](http://aheckmann.github.com/gm/docs.html#comment)
-    - [compose](http://aheckmann.github.com/gm/docs.html#compose)
-    - [compress](http://aheckmann.github.com/gm/docs.html#compress)
-    - [contrast](http://aheckmann.github.com/gm/docs.html#contrast)
-    - [convolve](http://aheckmann.github.com/gm/docs.html#convolve)
-    - [createDirectories](http://aheckmann.github.com/gm/docs.html#createDirectories)
-    - [crop](http://aheckmann.github.com/gm/docs.html#crop)
-    - [cycle](http://aheckmann.github.com/gm/docs.html#cycle)
-    - [deconstruct](http://aheckmann.github.com/gm/docs.html#deconstruct)
-    - [delay](http://aheckmann.github.com/gm/docs.html#delay)
-    - [define](http://aheckmann.github.com/gm/docs.html#define)
-    - [density](http://aheckmann.github.com/gm/docs.html#density)
-    - [despeckle](http://aheckmann.github.com/gm/docs.html#despeckle)
-    - [dither](http://aheckmann.github.com/gm/docs.html#dither)
-    - [displace](http://aheckmann.github.com/gm/docs.html#dither)
-    - [display](http://aheckmann.github.com/gm/docs.html#display)
-    - [dispose](http://aheckmann.github.com/gm/docs.html#dispose)
+  - manipulation 操作
+    - [adjoin](http://aheckmann.github.com/gm/docs.html#adjoin)  [将图像合并为单个多图像文件](http://www.graphicsmagick.org/GraphicsMagick.html#details-adjoin)
+    - [affine](http://aheckmann.github.com/gm/docs.html#affine)  [绘图变换矩阵](http://www.graphicsmagick.org/GraphicsMagick.html#details-affine)
+    - [antialias](http://aheckmann.github.com/gm/docs.html#antialias)    [禁用抗锯齿算法，提升速度](http://www.graphicsmagick.org/GraphicsMagick.html#details-antialias)
+    - [append](http://aheckmann.github.com/gm/docs.html#append)        [堆叠图像](http://www.graphicsmagick.org/GraphicsMagick.html#details-append)
+    - [authenticate](http://aheckmann.github.com/gm/docs.html#authenticate)  [使用密码解密图像](http://www.graphicsmagick.org/GraphicsMagick.html#details-authenticate)
+    - [autoOrient](http://aheckmann.github.com/gm/docs.html#autoOrient)    [根据EXIF数据自动调整图像方向](http://aheckmann.github.io/gm/docs.html#autoOrient)
+    - [average](http://aheckmann.github.com/gm/docs.html#average)        [平均一组图像](http://www.graphicsmagick.org/GraphicsMagick.html#details-average)
+    - [backdrop](http://aheckmann.github.com/gm/docs.html#backdrop)     [以背景为中心显示图像](http://www.graphicsmagick.org/GraphicsMagick.html#details-backdrop)
+    - [bitdepth](http://aheckmann.github.com/gm/docs.html#bitdepth)     [图像深度](http://www.graphicsmagick.org/GraphicsMagick.html#details-depth)
+    - [blackThreshold](http://aheckmann.github.com/gm/docs.html#blackThreshold)  [低于“阈值”的像素变为黑色](http://aheckmann.github.io/gm/docs.html#blackThreshold)
+    - [bluePrimary](http://aheckmann.github.com/gm/docs.html#bluePrimary)   [蓝色色度基点](http://aheckmann.github.io/gm/docs.html#bluePrimary)
+    - [blur](http://aheckmann.github.com/gm/docs.html#blur)      [接受半径和可选的sigma（标准偏差）。](http://aheckmann.github.io/gm/docs.html#blur)
+    - [border](http://aheckmann.github.com/gm/docs.html#border)   [用彩色边框包围图像](http://aheckmann.github.io/gm/docs.html#border)
+    - [borderColor](http://aheckmann.github.com/gm/docs.html#borderColor) [边框颜色]
+    - [box](http://aheckmann.github.com/gm/docs.html#box)  [设置注释边界框的颜色]
+    - [channel](http://aheckmann.github.com/gm/docs.html#channel)   [通道类型] :  Red 红, Green 绿, Blue 蓝, Opacity 透明, Matte 亚光, Cyan 青色, Magenta 品红, Yellow 黄, Black 黑, or Gray 灰.
+    - [charcoal](http://aheckmann.github.com/gm/docs.html#charcoal)   [模拟木炭画]
+    - [chop](http://aheckmann.github.com/gm/docs.html#chop)       [去除图像内部的像素]
+    - [clip](http://aheckmann.github.com/gm/docs.html#clip)      [应用剪切路径]
+    - [coalesce](http://aheckmann.github.com/gm/docs.html#coalesce)    [合并一系列图像]
+    - [colors](http://aheckmann.github.com/gm/docs.html#colors)    [设置图像的首选颜色数量]
+    - [colorize](http://aheckmann.github.com/gm/docs.html#colorize)   [使用可选的单独的红色，绿色和蓝色值为图像着色。]
+    - [colorMap](http://aheckmann.github.com/gm/docs.html#colorMap)  
+    - [colorspace](http://aheckmann.github.com/gm/docs.html#colorspace) [颜色空间类型] 可选的是：CineonLog , CMYK, GRAY, HSL, HWB, OHTA, RGB, Rec601Luma, Rec709Luma, Rec601YCbCr, Rec709YCbCr, Transparent, XYZ, YCbCr, YIQ, YPbPr, or YUV.
+    - [comment](http://aheckmann.github.com/gm/docs.html#comment)   [注释图像]
+    - [compose](http://aheckmann.github.com/gm/docs.html#compose)   [图像合成的类型] Over、In、Out、Atop、Xor、Plus、Minus、Add、Subtract、Difference、Divide、Multiply、Bumpmap、Copy、CopyRed、CopyGreen、CopyBlue、CopyOpacity、CopyCyan、CopyMagenta、CopyYellow、CopyBlack
+    - [compress](http://aheckmann.github.com/gm/docs.html#compress)   [图像压缩的类型] 可选：None, BZip, Fax, Group3, Group4, JPEG, Lossless, LZW, RLE, Zip, LZMA, JPEG2000, JPEG2000, JBIG, JBIG2, WebP, or ZSTD
+    - [contrast](http://aheckmann.github.com/gm/docs.html#contrast)   [增强或降低图像对比度]
+    - [convolve](http://aheckmann.github.com/gm/docs.html#convolve)   convolve image with the specified convolution kernel
+    - [createDirectories](http://aheckmann.github.com/gm/docs.html#createDirectories)   [根据需要创建输出目录]
+    - [crop](http://aheckmann.github.com/gm/docs.html#crop)     [裁剪图像的首选大小和位置]
+    - [cycle](http://aheckmann.github.com/gm/docs.html#cycle)   [按数量替换图像颜色图]
+    - [deconstruct](http://aheckmann.github.com/gm/docs.html#deconstruct)   [将图像序列分解为组成部分]
+    - [delay](http://aheckmann.github.com/gm/docs.html#delay)    [暂停后显示下一张图像]
+    - [define](http://aheckmann.github.com/gm/docs.html#define)  [添加编码器/解码器特定的选项]  (http://www.graphicsmagick.org/GraphicsMagick.html#details-define)
+    - [density](http://aheckmann.github.com/gm/docs.html#density)   [图像像素的水平和垂直分辨率]
+    - [despeckle](http://aheckmann.github.com/gm/docs.html#despeckle)  [降噪，减少图像中的斑点]
+    - [dither](http://aheckmann.github.com/gm/docs.html#dither)    [将Floyd / Steinberg误差扩散应用于图像]
+    - [displace](http://aheckmann.github.com/gm/docs.html#dither)   [移位由位移图定义的图像像素]
+    - [display](http://aheckmann.github.com/gm/docs.html#display)  
+    - [dispose](http://aheckmann.github.com/gm/docs.html#dispose)  [GIF处理方法] Undefined、None、Background、Previous        
     - [dissolve](http://aheckmann.github.com/gm/docs.html#dissolve)
     - [edge](http://aheckmann.github.com/gm/docs.html#edge)
     - [emboss](http://aheckmann.github.com/gm/docs.html#emboss)
